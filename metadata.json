@@ -1,0 +1,5 @@
+{
+  "name": "NeuroFlow Traffic Control",
+  "description": "An AI-driven smart traffic management simulation. It simulates a 4-lane intersection using multi-agent logic, adapts traffic light timings based on real-time congestion, and uses Gemini to analyze efficiency patterns.",
+  "requestFramePermissions": []
+}
