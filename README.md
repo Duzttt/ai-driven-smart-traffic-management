@@ -1,85 +1,71 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+<div align="center"> <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" /> </div>
 
-# AI-Driven Smart Traffic Management
-
-A small demo app that simulates and visualizes AI-assisted traffic control, with live density, phase queues, and an analyst component.
+AI-Driven Smart Traffic Management
+A sophisticated simulation and visualization tool designed to showcase how Large Language Models (LLMs) can optimize urban mobility. This application demonstrates real-time traffic flow adjustments and predictive analysis using AI.
 
 View the app in AI Studio: https://ai.studio/apps/drive/19k1aA0SWnNJqnxcEW6NSUqx55Xu0nSwo
 
-## Features
-- Local development with Vite + React + TypeScript
-- Simulation hooks and visual components for traffic intersections
-- Integration point for Gemini (set `GEMINI_API_KEY`) to enable AI-driven analysis
+🚦 How It Works
+The application functions as a closed-loop system between a physics-based simulation and an AI brain:
 
-## Prerequisites
-- Node.js (16+ recommended)
-- A Gemini API key (optional — required for AI features)
+Traffic Simulation: The engine generates dynamic vehicle flows across intersections, tracking "Live Density" and "Phase Queues" (how many cars are waiting for a green light).
 
-## Quickstart
-1. Install dependencies
+Data Ingestion: The simulation state is fed into the AI Analyst component.
 
-```bash
+AI Optimization: Using the Gemini API, the system analyzes congestion patterns. It identifies bottlenecks that traditional timed sensors might miss and suggests optimal light timing adjustments.
+
+Real-time Visualization: The dashboard renders these metrics into digestible charts and a live intersection map, allowing users to see the "AI at work."
+
+Features
+Real-time Visualization: Interactive components for monitoring intersection health.
+
+AI-Powered Insights: Integration with Gemini for intelligent traffic pattern analysis.
+
+Reactive Architecture: Built with Vite + React for high-performance state updates.
+
+Simulation Hooks: Custom logic for modeling complex vehicle behaviors.
+
+Prerequisites
+Node.js (16+ recommended)
+
+A Gemini API key (optional — required for AI features)
+
+Quickstart
+Install dependencies
+
+Bash
+
 npm install
-```
+Provide your Gemini API key Create a .env.local file in the project root with:
 
-2. Provide your Gemini API key (optional, used by AI features)
+Plaintext
 
-- Create a `.env.local` file in the project root with:
-
-```
 GEMINI_API_KEY=your_gemini_api_key_here
-```
+Run the dev server
 
-- Or on Windows PowerShell for a quick temporary value:
+Bash
 
-```powershell
-$env:GEMINI_API_KEY="your_gemini_api_key_here"
 npm run dev
-```
+Project Structure
+App.tsx — root app component
 
-3. Run the dev server
+index.tsx, index.html — app entry and HTML template
 
-```bash
-npm run dev
-```
+vite.config.ts, tsconfig.json, package.json — build tooling
 
-4. Build for production
+components/ — UI components: AIAnalyst.tsx, Dashboard.tsx, Intersection.tsx, LiveDensity.tsx, PhaseQueue.tsx
 
-```bash
-npm run build
-```
+hooks/useTrafficSimulation.ts — simulation logic
 
-5. Preview the production build
+constants.ts, types.ts — shared types and constants
 
-```bash
-npm run preview
-```
+Enabling AI features
+The AI features call Gemini; ensure GEMINI_API_KEY is set. Without it, the app still runs but AI-driven analysis will be disabled or mocked.
 
-## Project Structure
-- `App.tsx` — root app component
-- `index.tsx`, `index.html` — app entry and HTML template
-- `vite.config.ts`, `tsconfig.json`, `package.json` — build tooling
-- `components/` — UI components: `AIAnalyst.tsx`, `Dashboard.tsx`, `Intersection.tsx`, `LiveDensity.tsx`, `PhaseQueue.tsx`
-- `hooks/useTrafficSimulation.ts` — simulation logic
-- `constants.ts`, `types.ts` — shared types and constants
+Development notes
+This project uses Vite for fast HMR during development.
 
-## Enabling AI features
-The AI features call Gemini; ensure `GEMINI_API_KEY` is set. Without it, the app still runs but AI-driven analysis will be disabled or mocked.
+Tests: (none included) — add your preferred test runner if needed.
 
-## Development notes
-- This project uses Vite for fast HMR during development.
-- Tests: (none included) — add your preferred test runner if needed.
-
-## Contributing
-- Open issues or PRs for bugs, enhancements, or documentation updates.
-
-## License
-MIT
-
----
-If you want, I can also:
-- run the app locally and verify it starts
-- add a sample `.env.local.example` file
-Tell me which you'd like next.
+Contributing
+Open issues or PRs for bugs, enhancements, or documentation updates.
